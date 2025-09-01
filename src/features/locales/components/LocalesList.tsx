@@ -1,3 +1,4 @@
+import { PUBLIC_CLIENT_ORIGIN } from "@/config";
 import type { LocaleMeta } from "@/features/locales/types";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
@@ -106,7 +107,7 @@ export default function LocalesList({
                     <IconButton
                       edge="end"
                       component="a"
-                      href={`/${i.locale}`}
+                      href={`${PUBLIC_CLIENT_ORIGIN}/${i.locale}`}
                       target="_blank"
                       rel="noopener"
                       title="Открыть страницу"

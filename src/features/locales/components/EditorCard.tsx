@@ -2,12 +2,12 @@ import { copyToClipboard } from "@/features/locales/constants";
 import type { LocaleContent } from "@/features/locales/types";
 import Confirm from "@/features/visits/components/Confirm";
 
+import { PUBLIC_CLIENT_ORIGIN } from "@/config";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 import DeleteIcon from "@mui/icons-material/Delete";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
-
 import {
   Box,
   Button,
@@ -54,7 +54,7 @@ export default function EditorCard({
     return JSON.stringify(orig) !== JSON.stringify(value);
   }, [orig, value]);
 
-  const link = locale ? `/${locale}` : "";
+  const link = locale ? `${PUBLIC_CLIENT_ORIGIN}/${locale}` : "";
 
   const doClose = () => {
     if (dirty) setConfirmClose(true);
